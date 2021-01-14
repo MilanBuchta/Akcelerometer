@@ -1,0 +1,105 @@
+\hypertarget{_akcelerometer_8cpp}{}\doxysection{source/\+Akcelerometer.cpp File Reference}
+\label{_akcelerometer_8cpp}\index{source/Akcelerometer.cpp@{source/Akcelerometer.cpp}}
+
+
+Application entry point.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}board.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}peripherals.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pin\+\_\+mux.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}clock\+\_\+config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}M\+K\+L25\+Z4.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fsl\+\_\+debug\+\_\+console.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fsl\+\_\+i2c.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}M\+M\+A8451\+Q.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fsl\+\_\+pit.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}fsl\+\_\+uart.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fsl\+\_\+common.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fsl\+\_\+lpsci.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_akcelerometer_8cpp_aa816ab3cd347f9fb8805f6296052c9c3}\label{_akcelerometer_8cpp_aa816ab3cd347f9fb8805f6296052c9c3}} 
+\#define {\bfseries alpha}~0.\+09
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_akcelerometer_8cpp_a7faea99107ab3dda712780fc8464cf85}\label{_akcelerometer_8cpp_a7faea99107ab3dda712780fc8464cf85}} 
+void {\bfseries P\+I\+T\+\_\+\+I\+R\+Q\+Handler} ()
+\item 
+\mbox{\Hypertarget{_akcelerometer_8cpp_ad4ff4b53ad86a2401a1bd44a82a3cd0e}\label{_akcelerometer_8cpp_ad4ff4b53ad86a2401a1bd44a82a3cd0e}} 
+void {\bfseries collect\+Data} ()
+\item 
+\mbox{\Hypertarget{_akcelerometer_8cpp_a840291bc02cba5474a4cb46a9b9566fe}\label{_akcelerometer_8cpp_a840291bc02cba5474a4cb46a9b9566fe}} 
+int {\bfseries main} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_akcelerometer_8cpp_ad0da36b2558901e21e7a30f6c227a45e}\label{_akcelerometer_8cpp_ad0da36b2558901e21e7a30f6c227a45e}} 
+float {\bfseries x}
+\item 
+\mbox{\Hypertarget{_akcelerometer_8cpp_aa4f0d3eebc3c443f9be81bf48561a217}\label{_akcelerometer_8cpp_aa4f0d3eebc3c443f9be81bf48561a217}} 
+float {\bfseries y}
+\item 
+\mbox{\Hypertarget{_akcelerometer_8cpp_af73583b1e980b0aa03f9884812e9fd4d}\label{_akcelerometer_8cpp_af73583b1e980b0aa03f9884812e9fd4d}} 
+float {\bfseries z} = 0
+\item 
+\mbox{\Hypertarget{_akcelerometer_8cpp_ab3ac8e1dc34f396339f93c01d2782044}\label{_akcelerometer_8cpp_ab3ac8e1dc34f396339f93c01d2782044}} 
+float {\bfseries acc\+\_\+x}
+\item 
+\mbox{\Hypertarget{_akcelerometer_8cpp_a781272f25ca67525c9902c98577122e3}\label{_akcelerometer_8cpp_a781272f25ca67525c9902c98577122e3}} 
+float {\bfseries acc\+\_\+y}
+\item 
+\mbox{\Hypertarget{_akcelerometer_8cpp_a6056b4ee256dc6b18030852e6cb2e83f}\label{_akcelerometer_8cpp_a6056b4ee256dc6b18030852e6cb2e83f}} 
+float {\bfseries acc\+\_\+z} = 0
+\item 
+\mbox{\Hypertarget{_akcelerometer_8cpp_adda4fd0bc6727cd79742d211e48db27c}\label{_akcelerometer_8cpp_adda4fd0bc6727cd79742d211e48db27c}} 
+\mbox{\hyperlink{class_m_m_a8451_q}{M\+M\+A8451Q}} $\ast$ {\bfseries acc\+\_\+pt}
+\item 
+\mbox{\Hypertarget{_akcelerometer_8cpp_a4bd7666380e01cee8eb7cd5f0df5e3bf}\label{_akcelerometer_8cpp_a4bd7666380e01cee8eb7cd5f0df5e3bf}} 
+volatile bool {\bfseries pit\+Isr\+Flag} = false
+\item 
+\mbox{\Hypertarget{_akcelerometer_8cpp_acc73f3c5a35bb2271e2fc9a9c3df3149}\label{_akcelerometer_8cpp_acc73f3c5a35bb2271e2fc9a9c3df3149}} 
+int {\bfseries C\+RC} = 0
+\item 
+int {\bfseries crc} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Application entry point. 
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_akcelerometer_8cpp_a9b9bee812e0d8da52120ae253d934756}\label{_akcelerometer_8cpp_a9b9bee812e0d8da52120ae253d934756}} 
+\index{Akcelerometer.cpp@{Akcelerometer.cpp}!crc@{crc}}
+\index{crc@{crc}!Akcelerometer.cpp@{Akcelerometer.cpp}}
+\doxysubsubsection{\texorpdfstring{crc}{crc}}
+{\footnotesize\ttfamily int crc\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{ 0, 94, 188, 226, 97, 63, 221, 131, 194, 156, 126, 32, 163, 253, 31, 65,}
+\DoxyCodeLine{        157, 195, 33, 127, 252, 162, 64, 30, 95, 1, 227, 189, 62, 96, 130, 220,}
+\DoxyCodeLine{        35, 125, 159, 193, 66, 28, 254, 160, 225, 191, 93, 3, 128, 222, 60, 98,}
+\DoxyCodeLine{        190, 224, 2, 92, 223, 129, 99, 61, 124, 34, 192, 158, 29, 67, 161, 255,}
+\DoxyCodeLine{        70, 24, 250, 164, 39, 121, 155, 197, 132, 218, 56, 102, 229, 187, 89, 7,}
+\DoxyCodeLine{        219, 133, 103, 57, 186, 228, 6, 88, 25, 71, 165, 251, 120, 38, 196, 154,}
+\DoxyCodeLine{        101, 59, 217, 135, 4, 90, 184, 230, 167, 249, 27, 69, 198, 152, 122, 36,}
+\DoxyCodeLine{        248, 166, 68, 26, 153, 199, 37, 123, 58, 100, 134, 216, 91, 5, 231, 185,}
+\DoxyCodeLine{        140, 210, 48, 110, 237, 179, 81, 15, 78, 16, 242, 172, 47, 113, 147, 205,}
+\DoxyCodeLine{        17, 79, 173, 243, 112, 46, 204, 146, 211, 141, 111, 49, 178, 236, 14, 80,}
+\DoxyCodeLine{        175, 241, 19, 77, 206, 144, 114, 44, 109, 51, 209, 143, 12, 82, 176, 238,}
+\DoxyCodeLine{        50, 108, 142, 208, 83, 13, 239, 177, 240, 174, 76, 18, 145, 207, 45, 115,}
+\DoxyCodeLine{        202, 148, 118, 40, 171, 245, 23, 73, 8, 86, 180, 234, 105, 55, 213, 139,}
+\DoxyCodeLine{        87, 9, 235, 181, 54, 104, 138, 212, 149, 203, 41, 119, 244, 170, 72, 22,}
+\DoxyCodeLine{        233, 183, 85, 11, 136, 214, 52, 106, 43, 117, 151, 201, 74, 20, 246, 168,}
+\DoxyCodeLine{        116, 42, 200, 150, 21, 75, 169, 247, 182, 232, 10, 84, 215, 137, 107, 53 \}}
+
+\end{DoxyCode}
